@@ -10,13 +10,13 @@ const help = (prefix) => {
 *Descripción:* convertir sticker a imagen
 *Uso:* responde al sticker\n
 > *Otros Comandos* <
-*Comando:* *${prefix}yt* 
-*Descripción:* Descargar cancion de YouTube con URL
-*Uso:* *${prefix}yt https://youtube.com*\n
-*Comando:* *${prefix}tts*
-*Descripción:*convertir texto a voz/audio
-*Uso:* *${prefix}tts [cc] [text]*\n ejemplo : *${prefix}tts es hola*\n
-*Comando:* *${prefix}setprefix* 
+*Comando:* *${prefix}play* 
+*Descripción:* Buscar cancion de YouTube
+*Uso:* *${prefix}play*\n
+~*Comando:* *${prefix}tts*~
+~*Descripción:*convertir texto a voz/audio~
+~*Uso:* *${prefix}tts [cc] [text]*\n ejemplo : *${prefix}tts es hola*~\n
+*Comando:* *${prefix}setprefix*
 *Descripción:* remplazar prefix
 *Uso:* *${prefix}setprefix [texto|opcional]*\nejemplo: *${prefix}setprefix ?*
 nota : Este Comando solo puede ser utilizado por el propietario del bot\n

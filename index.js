@@ -280,22 +280,21 @@ async function starts() {
 					reply(teks.trim())
                                         break
 					case 'antilink':
-				if (!isGroup) return reply(mess.only.group)
-					if (!isGroup) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('escriba !antilink para activar')
-					if ((args[0]) === 'on') {
-						if (isAntiLink) return reply('está activo')
-						antilink.push(from)
-						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply(`\`\`\`✓Activado con éxito la función anti-enlace en el grupo\`\`\` *${groupMetadata.subject}*`)
-					} else if ((args[0]) === 'off') {
-						if (!isAntiLink) return reply('anti link está desactivado')
-						antilink.splice(from, 1)
-						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply(`\`\`\`✓Desactivación exitosa de la función anti-enlace en el grupo\`\`\` *${groupMetadata.subject}*`)
+					 client.updatePresence(from, Presence.composing)
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply('pilih enable atau disable udin!!')
+					if (args[0] == 'enable') {
+						if (isSimi) return reply('Mode antilink sudah aktif')
+						anlink.push(from)
+						fs.writeFileSync('./src/antilink.json', JSON.stringify(anlink))
+						reply(`Sukses mengaktifkan mode antilink`)
+					} else if (args[0] == 'disable') {
+						anlink.splice(from, 1)
+						fs.writeFileSync('./src/antilink.json', JSON.stringify(anlink))
+						reply('Sukes menonaktifkan mode antilink️')
 					} else {
-						reply('encendido para habilitar, apagado para deshabilitar')
+						reply('pilih enable atau disable udin!!')
 					}
 					break
 				case 'tagall':

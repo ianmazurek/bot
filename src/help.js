@@ -15,7 +15,7 @@ const help = (prefix) => {
 *Uso:* *${prefix}play*\n
 ~*Comando:* *${prefix}tts*~
 ~*Descripción:*convertir texto a voz/audio~
-~*Uso:* *${prefix}tts [cc] [text]*\n ejemplo : *${prefix}tts es hola*~\n
+~*Uso:* *${prefix}tts [cc] [text]*~\n ejemplo : ~*${prefix}tts es hola*~\n
 *Comando:* *${prefix}setprefix*
 *Descripción:* remplazar prefix
 *Uso:* *${prefix}setprefix [texto|opcional]*\nejemplo: *${prefix}setprefix ?*

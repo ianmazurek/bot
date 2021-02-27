@@ -298,7 +298,7 @@ async function starts() {
 					break
 				case 'tagall':
 					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isOwner) return reply(Only.For.BotOwner)
 					members_id = []
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'

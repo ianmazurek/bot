@@ -1,6 +1,6 @@
 FROM node:latest
 
-RUN  npm install 
+RUN  npm install ffmpeg
 
 WORKDIR /app
 COPY package.json /app

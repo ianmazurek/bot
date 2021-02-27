@@ -18,6 +18,7 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
+const anlink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 prefix = '!'
 blocked = []
 
@@ -146,6 +147,7 @@ async function starts() {
 			const isWelkom = isGroup ? welkom.includes(from) : false
 			const isNsfw = isGroup ? nsfw.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
+                        const isAntilink = isGroup ? anlink.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
@@ -279,9 +281,9 @@ async function starts() {
                                         break
 					case 'antilink':
 				if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('escriba! antilink para activar')
+					if (!isGroup) return reply(mess.only.admin)
+					if (!isBotGroup) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('escriba !antilink para activar')
 					if ((args[0]) === 'on') {
 						if (isAntiLink) return reply('está activo')
 						antilink.push(from)

@@ -282,7 +282,7 @@ async function starts() {
 					case 'antilink':
 				if (!isGroup) return reply(mess.only.group)
 					if (!isGroup) return reply(mess.only.admin)
-					if (!isBotGroup) return reply(mess.only.Badmin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (args.length < 1) return reply('escriba !antilink para activar')
 					if ((args[0]) === 'on') {
 						if (isAntiLink) return reply('está activo')
